@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}User Profile{% endblock %}
+
+{% block content %}
+<h1>User Profile</h1>
+
+
+<div class="card" style="width: 20rem;">
+    <img src="{{user.image_url}}" class="card-img-top">
+    <div class="card-body">
+        <h5 class="card-title">{{user.full_name}}</h5>
+
+        <form>
+            <button class="btn btn-primary btn-sm" formaction="/users/{{ user.id }}/edit" formmethod="GET">Edit
+            </button>
+            <button class="btn btn-danger btn-sm" formaction="/users/{{ user.id }}/delete" formmethod="POST">Delete
+            </button>
+        </form>
+    </div>
+</div>
+{% endblock %}
